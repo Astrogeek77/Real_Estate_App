@@ -1,4 +1,4 @@
-import { Box, Flex, Spacer, Text } from '@chakra-ui/layout';
+import { Box, Flex, Spacer, Text, Container } from '@chakra-ui/layout';
 import { Avatar } from '@chakra-ui/avatar';
 import { FaBed, FaBath } from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
@@ -46,7 +46,7 @@ const PropertyDetails = ({
       <Flex
         alignItems="center"
         p="2"
-        marginTop="2"
+        marginTop="4"
         fontSize="2xl"
         justifyContent="space-between"
         w="full"
@@ -59,55 +59,59 @@ const PropertyDetails = ({
         <spacer />
       </Flex>
     </Box>
-    <Box marginTop="2">
+    <Box m="6">
       <Text fontSize="lg" marginBottom="2" fontWeight="bold">
         {title}
       </Text>
-      <Text lineHeight="2" color="gray.600">
+      <Container lineHeight="2" maxW="full" color="gray.600" flexDirection="row" centerContent>
         {description}
-      </Text>
+      </Container>
     </Box>
     <Flex
       flexWrap="wrap"
       textTransform="uppercase"
       justifyContent="space-between"
+      flexDirection="row"
+      alignItems="center"
+            w="full"
+            p="5"
     >
       <Flex
         justifyContent="space-between"
-        w="400px"
+        w="full"
         borderBottom="1px"
         borderColor="gray.100"
         p="3"
       >
-        <Text>Type</Text>
-        <Text fontWeight="bold">{type}</Text>
+        <Text fontWeight="bold">Type</Text>
+        <Text fontWeight="medium">{type}</Text>
       </Flex>
       <Flex
         justifyContent="space-between"
-        w="400px"
+        w="full"
         borderBottom="1px"
         borderColor="gray.100"
         p="3"
       >
-        <Text>Purpose</Text>
-        <Text fontWeight="bold">{purpose}</Text>
+        <Text fontWeight="bold">Purpose</Text>
+        <Text fontWeight="medium">{purpose}</Text>
       </Flex>
       {furnishingStatus && (
         <Flex
           justifyContent="space-between"
-          w="400px"
+          w="full"
           borderBottom="1px"
           borderColor="gray.100"
           p="3"
         >
-          <Text>Furnishing Status</Text>
-          <Text fontWeight="bold">{furnishingStatus}</Text>
+          <Text fontWeight="bold">Furnishing Status</Text>
+          <Text fontWeight="medium">{furnishingStatus}</Text>
         </Flex>
       )}
     </Flex>
-    <Box>
+    <Box m="6">
       {amenities.length && (
-        <Text fontSize="2xl" fontWeight="black" marginTop="5">
+        <Text fontSize="2xl" fontWeight="black" marginTop="5" marginBottom="3">
           Facilites:
         </Text>
       )}
@@ -117,7 +121,7 @@ const PropertyDetails = ({
             <Text
               key={amenity.text}
               fontWeight="bold"
-              color="blue.400"
+              color="purple.600"
               fontSize="l"
               p="2"
               bg="gray.200"
