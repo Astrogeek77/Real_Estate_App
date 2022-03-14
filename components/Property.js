@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Box, Flex, Text } from '@chakra-ui/layout';
+import { Box, Flex, Text, spacer } from '@chakra-ui/layout';
 import { Avatar } from '@chakra-ui/avatar';
 import { FaBed, FaBath } from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
@@ -58,16 +58,23 @@ const Property = ({
         <Flex
           alignItems="center"
           p="1"
-          justifyContent="space-between"
+          marginTop="2"
+          justifyContent="space-around"
           color="purple.700"
-          w="250px"
+          w="full"
         >
-          {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft{' '}
+          <spacer />
+          {rooms} <FaBed /> <spacer /> |<spacer /> {baths} <FaBath /> <spacer />{' '}
+          |
+          <spacer /> {millify(area)} sqft
           <BsGridFill />
+          <spacer />
         </Flex>
-        <Text fontSize="md">
-          {title.length > 45 ? title.substring(0, 45) : title}
-        </Text>
+        <Flex justifyContent="center" w="full" alignItems="center" marginTop="2">
+          <Text fontSize="lg">
+            {title.length > 35 ? `${title.substring(0, 35)}...` : title.toLowerCase()}
+          </Text>
+        </Flex>
       </Box>
     </Flex>
   </Link>

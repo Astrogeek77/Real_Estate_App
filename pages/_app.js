@@ -2,6 +2,7 @@ import Router from 'next/router';
 import Head from 'next/head';
 import NProgress from 'nprogress';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 import Layout from '../components/Layout';
 
@@ -17,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   // });
 
   return (
-    <>
+    <Box bg="gray.300">
       <Head>
         {/* <link
           rel="stylesheet"
@@ -28,11 +29,13 @@ function MyApp({ Component, pageProps }) {
         /> */}
       </Head>
       <ChakraProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Box bg="gray.100">
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Box>
       </ChakraProvider>
-    </>
+    </Box>
   );
 }
 

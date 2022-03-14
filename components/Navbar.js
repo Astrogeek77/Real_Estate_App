@@ -14,10 +14,10 @@ import { BsSearch } from 'react-icons/bs';
 import { FiKey } from 'react-icons/fi';
 
 const Navbar = () => (
-  <Flex p="2" borderBottom="1px" borderColor="gray.100">
+  <Flex p="2" borderBottom="1px" borderColor="gray.300">
     <Box fontSize="3xl" color="purple.600" fontWeight="bold">
       <Link href="/" paddingLeft="2">
-        Realtor
+        Real Estate
       </Link>
     </Box>
     <Spacer />
@@ -27,7 +27,8 @@ const Navbar = () => (
           as={IconButton}
           icon={<FcMenu />}
           variant="outline"
-          color="red.400"
+          color="black"
+          bg="gray.200"
         />
         <MenuList>
           <Link href="/" passHref>
