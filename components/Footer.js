@@ -8,7 +8,7 @@ const Footer = () => (
     borderTop="1px"
     borderColor="gray.100"
   >
-    © 2021 Astrogeek77, Inc.
+    © 2022 Astrogeek77, Inc.
   </Box>
 );
 
